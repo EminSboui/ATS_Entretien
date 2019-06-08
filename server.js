@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyparser = require('body-parser');
 const path = require('path');
 const items = require('./routes/api/items');
-
+const candidature = require('./routes/api/candidature');
 const app = express();
 
 //bodyparser Middlware
@@ -20,7 +20,8 @@ mongoose
 
 // use routes
 app.use('/api/items',items);
-
+// use routes
+app.use('/api/ats',candidature);
 // Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
